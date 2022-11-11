@@ -41,11 +41,25 @@ public class Main {
         me.pet = dog;
         System.out.println(me.pet.species);
 
-        Car ford = new Car("Mondeo", "Ford");
-        me.car = ford;
-        //ctrl + alt + l
+        Car ford = new Car("Mondeo", "Ford", 5000.0);
+        Car toyota = new Car("CHR", "Toyota", 2999.0);
+        me.setSalary(200.0);
+//        me.car = ford;
+//        //ctrl + alt + l
+//        System.out.println(me.car.producer);
 
-        System.out.println(me.car.producer);
+
+        Double salaryCheck = me.getSalary();
+
+        me.setCar(ford);
+
+        me.setSalary(3000.0);
+        salaryCheck = me.getSalary();
+
+        me.setCar(ford);
+
+        me.setCar(toyota);
+
 
 
     }
