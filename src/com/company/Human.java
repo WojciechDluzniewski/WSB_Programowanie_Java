@@ -1,6 +1,6 @@
 package com.company;
 
-import org.w3c.dom.ls.LSOutput;
+import devices.Car;
 
 public class Human {
     String firstName;
@@ -33,16 +33,20 @@ public class Human {
     }
 
     public void setCar(Car newCar){
-        if(this.salary > newCar.value){
+        if(this.salary > newCar.getValue()){
             System.out.println("Udało się kupić auto za gotówkę.");
             this.car = newCar;
         }
-        else if(this.salary > (newCar.value)/12){
+        else if(this.salary > (newCar.getValue())/12){
             System.out.println("Udało się kupić samochód na kredyt.");
             this.car = newCar;
         }
         else{
             System.out.println("Znajdź sobie lepszą pracę, albo postaraj się o podwyżkę i nie zawracaj poważnym ludziom gitary.");
         }
+    }
+
+    public String toString(){
+        return this.firstName + " " + this.lastName;
     }
 }

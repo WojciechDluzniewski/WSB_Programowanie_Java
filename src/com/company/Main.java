@@ -1,5 +1,7 @@
 package com.company;
 
+import devices.Car;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -33,6 +35,8 @@ public class Main {
         cat.takeForAWalk();
 
         Human me = new Human();
+        me.firstName = "Wojciech";
+        me.lastName = "Dluzniewski";
         me.pet = new Animal("felis");
         System.out.println(me.pet.species);
         //me.pet.feed();
@@ -60,6 +64,27 @@ public class Main {
 
         me.setCar(toyota);
 
+        Car ford2 = new Car("Mondeo", "Ford", 5000.0);
+
+        if(ford == ford2){
+            System.out.println("Te Fordy są identyczne!");
+        }
+        else{
+            System.out.println("Te Fordy różnią się od siebie.");
+        }
+
+        if(ford.equals(ford2)){
+            System.out.println("Te Fordy są identyczne!");
+        }
+        else{
+            System.out.println("Te Fordy różnią się od siebie.");
+        }
+
+        System.out.println(ford);
+        System.out.println(ford2);
+
+        System.out.println(me);
+        System.out.println(dog);
 
 
     }
