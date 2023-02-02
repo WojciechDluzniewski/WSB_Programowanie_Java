@@ -1,6 +1,7 @@
 package com.company;
 
 import devices.Car;
+import devices.Phone;
 
 public class Human {
     String firstName;
@@ -9,6 +10,10 @@ public class Human {
     private Car car;
     Integer yearOfBirth;
     private Double salary = 0.0;
+
+    public double cash;
+
+    public Phone phone;
 
     public Double getSalary() {
         System.out.println(java.time.LocalDate.now());
@@ -33,6 +38,11 @@ public class Human {
     }
 
     public void setCar(Car newCar){
+        if(newCar == null){
+            this.car = null;
+            return;
+        }
+
         if(this.salary > newCar.getValue()){
             System.out.println("Udało się kupić auto za gotówkę.");
             this.car = newCar;

@@ -1,5 +1,4 @@
 package com.company;
-
 import devices.Car;
 import devices.Phone;
 
@@ -44,6 +43,11 @@ public class Main {
         me.pet = new Animal("felis");
         System.out.println(me.pet.species);
         //me.pet.feed();
+
+        Human sister = new Human();
+        sister.firstName = "Karolina";
+        sister.lastName = "Dluzniewska";
+        sister.cash = 100000.0;
 
 
         me.pet = dog;
@@ -93,10 +97,43 @@ public class Main {
         ford2.turnOn();
 
         Phone phone = new Phone("11 Pro", "Apple", "4");
+        me.phone = phone;
 
-        phone.turnOn();
+
+        System.out.println(me.cash);
+        System.out.println(sister.cash);
+
+//        me.pet.sell(me, sister, 9999.0);
+//        System.out.println(me.cash);
+//        System.out.println(sister.cash);
+//
+//
+//        me.getCar().sell(me, sister, 24000.0);
+//        System.out.println(me.cash);
+//        System.out.println(sister.cash);
+//
+//        me.phone.sell(me, sister, 2783.0);
+//        System.out.println(me.cash);
+//        System.out.println(sister.cash);
 
 
+
+        sister.cash = 0;
+
+        me.pet.sell(me, sister, 9999.0);
+        System.out.println(me.cash);
+        System.out.println(sister.cash);
+
+
+        me.getCar().sell(me, sister, 24000.0);
+        System.out.println(me.cash);
+        System.out.println(sister.cash);
+
+        me.phone.sell(me, sister, 2783.0);
+        System.out.println(me.cash);
+        System.out.println(sister.cash);
+
+        }
 
     }
-}
+

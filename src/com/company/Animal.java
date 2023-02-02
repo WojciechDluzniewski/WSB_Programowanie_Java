@@ -1,6 +1,6 @@
 package com.company;
 
-public class Animal {
+public class Animal implements Selleable {
     String species;
     String name;
     Double weight;
@@ -41,5 +41,24 @@ public class Animal {
     }
 
 
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if(seller.pet == null){
+            System.out.println("Sprzedający nie posiada zwierzęcia.");
+            return;
+        }
+        if(buyer.cash < price ){
+            System.out.println("Kupujący nie ma wystarczającej ilośći pieniędzy na zakup: " + this.name);
+            return;
+        }
+        buyer.cash -= price;
+        seller.cash += price;
+        buyer.pet = seller.pet;
+        seller.pet = null;
+
+        System.out.println("Transkcja sprzedaży zwierzęcia przebiegła pomyślnie");
+
+
+    }
 }
 

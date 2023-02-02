@@ -1,6 +1,8 @@
 package devices;
 
-public abstract class Device {
+import com.company.Selleable;
+
+public abstract class Device implements Selleable {
     String model;
     String producer;
     Integer yearOfProduction;
@@ -11,5 +13,7 @@ public abstract class Device {
     public String toString() {
         return model + " " + producer + " " + yearOfProduction;
     }
+
+
 
 }

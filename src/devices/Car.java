@@ -1,5 +1,7 @@
 package devices;
 
+import com.company.Human;
+
 public class Car extends Device {
 
     Double horsePower;
@@ -24,11 +26,30 @@ public class Car extends Device {
         System.out.println("Samochód odpalił się");
     }
 
-    public String toString(){
+    public String toString() {
         return model + " " + producer;
     }
 
-    public Double getValue(){
+
+    public Double getValue() {
         return this.value;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if(seller.getCar() == null){
+            System.out.println("Sprzedający nie posiada zsamochodu.");
+            return;
+        }
+        if(buyer.cash < price ){
+            System.out.println("Kupujący nie ma wystarczającej ilośći pieniędzy na zakup samochodu.");
+            return;
+        }
+        buyer.cash -= price;
+        seller.cash += price;
+        buyer.setCar(seller.getCar());
+        seller.setCar(null);
+
+        System.out.println("Transkcja sprzedaży samochodu przebiegła pomyślnie");
     }
 }
