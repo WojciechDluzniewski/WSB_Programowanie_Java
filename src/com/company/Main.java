@@ -1,8 +1,12 @@
 package com.company;
 
 import devices.Car;
+import devices.Phone;
 
 public class Main {
+
+    public Main() {
+    }
 
     public static void main(String[] args) {
         Animal dog = new Animal("canis");
@@ -85,6 +89,13 @@ public class Main {
 
         System.out.println(me);
         System.out.println(dog);
+
+        ford2.turnOn();
+
+        Phone phone = new Phone("11 Pro", "Apple", "4");
+
+        phone.turnOn();
+
 
 
     }

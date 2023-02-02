@@ -1,10 +1,10 @@
 package devices;
 
-public class Car {
-    final String model;
-    final String producer;
+public class Car extends Device {
+
     Double horsePower;
-    Integer yearOfProduction;
+
+
     Double value;
 
     public Car(String model, String producer, Double value) {
@@ -17,6 +17,11 @@ public class Car {
         return (this.model.equals(car.model) && this.producer.equals(car.producer) && this.value.equals(car.value));
 
 
+    }
+
+    @Override
+    public void turnOn() {
+        System.out.println("Samochód odpalił się");
     }
 
     public String toString(){
